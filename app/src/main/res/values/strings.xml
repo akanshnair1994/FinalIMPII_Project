@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">CoffeeMoi</string>
+    <string name="login_here_string">Login Here</string>
+    <string name="username_string">Username</string>
+    <string name="password_string">Password</string>
+    <string name="login_string">Login</string>
+    <string name="logo">Logo</string>
+    <string name="incorrect_email">Incorrect Email Address</string>
+    <string name="incorrect_password">Incorrect Password</string>
+    <string name="no_users">No users exist</string>
+    <string name="title_activity_post_login">PostLoginActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_create_coffee">Create Coffee</string>
+    <string name="action_past_orders">Past Orders</string>
+    <string name="action_exit">Exit</string>
+    <string name="welcome_string">Welcome</string>
+    <string-array name="coffee_types">
+        <item>Select a Coffee Type</item>
+        <item>French Vanilla</item>
+        <item>Hot Chocolate</item>
+        <item>Capaccino</item>
+        <item>Double Double</item>
+    </string-array>
+    <string-array name="coffee_size">
+        <item>Select a Coffee Size</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="size_string">Size:</string>
+    <string name="coffee_type_string">Coffee Type:</string>
+    <string name="expresso_shot_string">Expresso Shot:</string>
+    <string name="make_coffee_string">Make Coffee</string>
+    <string name="agreement_string">Agreement</string>
+    <string name="agreement_text_string">Notice: Please note that once the order has been placed, can\'t be cancelled. If at some point, such an issue arises, you need to cancel the order within the time frame of 10 minutes after the order is placed. Do you agree to the terms?</string>
+    <string name="agree_string">I Agree</string>
+    <string name="disagree_string">I Disagree</string>
+    <string name="agree_to_terms_string">Please agree to the terms first</string>
+    <string name="coffee_order_placed_message_string">Coffee order was created successfully</string>
+    <string name="order_creation_problem">There was some problem in creating the order. Please try again later...</string>
+    <string name="profile_screen_string">Profile</string>
+    <string name="past_orders">Past Orders</string>
+    <string name="remove_string">Remove Coffee</string>
+    <string name="cancel_order_title_string">Cancel Order</string>
+    <string name="cancel_order_messsage_string">Are you sure you want to cancel the order?</string>
+</resources>

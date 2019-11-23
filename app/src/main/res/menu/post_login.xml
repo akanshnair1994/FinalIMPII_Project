@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_profile"
+        android:title="@string/action_profile"
+        android:icon="@drawable/ic_person_black_24dp" />
+
+    <item
+        android:id="@+id/action_create_coffee"
+        android:title="@string/action_create_coffee"
+        android:icon="@drawable/ic_create_coffee" />
+
+    <item
+        android:id="@+id/action_past_orders"
+        android:title="@string/action_past_orders"
+        android:icon="@drawable/ic_past_orders" />
+
+    <item
+        android:id="@+id/action_exit"
+        android:title="@string/action_exit"
+        android:icon="@drawable/ic_exit" />
+
+</menu>
