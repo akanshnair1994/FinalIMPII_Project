@@ -30,8 +30,6 @@ public class MakeCoffeeFragment extends Fragment {
     AppCompatButton makeCoffee;
     ProgressBar progressBar;
     RelativeLayout layout;
-    String[] coffeeSizes = getResources().getStringArray(R.array.coffee_size);
-    String[] coffeeTypes = getResources().getStringArray(R.array.coffee_types);
     DatabaseHelper helper;
     boolean agreed = false;
 
@@ -49,11 +47,15 @@ public class MakeCoffeeFragment extends Fragment {
         layout = root.findViewById(R.id.layout);
         makeCoffee.setEnabled(false);
         helper = new DatabaseHelper(root.getContext(), "", null, 0);
+        final String[] coffeeSizes = getResources().getStringArray(R.array.coffee_size);
+        final String[] coffeeTypes = getResources().getStringArray(R.array.coffee_types);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(root.getContext(), android.R.layout.simple_spinner_item, coffeeSizes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        size.setAdapter(adapter);
-        coffeeType.setAdapter(adapter);
+        ArrayAdapter<String> sizeAdapter = new ArrayAdapter<>(root.getContext(), android.R.layout.simple_spinner_item, coffeeSizes);
+        ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(root.getContext(), android.R.layout.simple_spinner_item, coffeeTypes);
+        sizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        size.setAdapter(sizeAdapter);
+        coffeeType.setAdapter(typeAdapter);
         size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
@@ -77,7 +79,6 @@ public class MakeCoffeeFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 if (position == 0) {
-                    size.setEnabled(false);
                     yes.setEnabled(false);
                     no.setEnabled(false);
                 } else {

@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void validateCredentials(String username, String password) {
-        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches() || password.length() < 6) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches() && password.length() < 6) {
             if (Patterns.EMAIL_ADDRESS.matcher(username).matches())
                 this.username.setError(getString(R.string.incorrect_email));
             if (password.length() < 6) {
@@ -68,6 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginActivity.this, PostLoginActivity.class);
                             intent.putExtra(Constants.USERS_INTENT, username);
                             startActivity(intent);
+                        } else {
+                            Snackbar.make(constraintLayout, "Incorrect username and password", Snackbar.LENGTH_SHORT).show();
                         }
                     }
                 } else {
@@ -77,7 +80,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Snackbar.make(constraintLayout, "There was some problem: " + databaseError.toException().getMessage(), Snackbar.LENGTH_SHORT)
+                        .show();
+                Log.e(LoginActivity.class.getName(), databaseError.toException().getMessage());
             }
         });
     }

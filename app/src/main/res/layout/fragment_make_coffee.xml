@@ -31,25 +31,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:text="@string/make_coffee_string"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/size_string"
                 android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
@@ -115,6 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
+                    android:checked="true"
                     android:text="@android:string/yes" />
 
                 <RadioButton

@@ -42,9 +42,9 @@
         <item>Large</item>
     </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="size_string">Size:</string>
-    <string name="coffee_type_string">Coffee Type:</string>
-    <string name="expresso_shot_string">Expresso Shot:</string>
+    <string name="size_string">Size</string>
+    <string name="coffee_type_string">Coffee Type</string>
+    <string name="expresso_shot_string">Expresso Shot</string>
     <string name="make_coffee_string">Make Coffee</string>
     <string name="agreement_string">Agreement</string>
     <string name="agreement_text_string">Notice: Please note that once the order has been placed, can\'t be cancelled. If at some point, such an issue arises, you need to cancel the order within the time frame of 10 minutes after the order is placed. Do you agree to the terms?</string>
@@ -58,4 +58,6 @@
     <string name="remove_string">Remove Coffee</string>
     <string name="cancel_order_title_string">Cancel Order</string>
     <string name="cancel_order_messsage_string">Are you sure you want to cancel the order?</string>
+    <string name="create_order_string">Create Order</string>
+    <string name="no_orders_placed_string">No Orders Placed</string>
 </resources>

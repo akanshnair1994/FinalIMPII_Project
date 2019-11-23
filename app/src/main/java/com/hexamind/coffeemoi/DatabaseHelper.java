@@ -25,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE "  + TABLE_NAME +
-                COL_1 + "( INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "(" + COL_1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_2 + " VARCHAR(255), " +
                 COL_3 + " VARCHAR(255), " +
                 COL_4 + " VARCHAR(255), " +
@@ -37,14 +37,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(COL_2, orders.getSize());
+        values.put(COL_2, orders.getUsername());
         values.put(COL_3, orders.getSize());
         values.put(COL_4, orders.getType());
         values.put(COL_5, orders.isExpressoShot());
-        db.insert(TABLE_NAME, null, values);
+        long i = db.insert(TABLE_NAME, null, values);
         db.close();
 
-        return true;
+        if (i > 0)
+            return true;
+        else
+            return false;
     }
 
     public boolean updateCoffee(String id, Orders orders) {
@@ -60,28 +63,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public int removeCoffee(String id) {
+    public int removeCoffee(int id) {
         SQLiteDatabase db = getWritableDatabase();
-        int delete = db.delete(TABLE_NAME, "ID = ?", new String[] {id});
+        int delete = db.delete(TABLE_NAME, "ID = ?", new String[] {String.valueOf(id)});
         db.close();
 
         return delete;
     }
 
-    public String getId(Orders orders) {
+    public int getId(Orders orders) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT " + COL_1 + " FROM " + TABLE_NAME + " WHERE "  + COL_3 + " = ? AND "  + COL_4 + " = ? AND "  + COL_5 + " = ?;",
-                new String[]{orders.getUsername(), orders.getSize(), orders.getType()});
+        Cursor cursor = db.rawQuery("SELECT " + COL_1 + " FROM " + TABLE_NAME + " WHERE " + COL_2 + " = ? AND " + COL_3 + " = ? AND "  + COL_4 + " = ? AND "  + COL_5 + " = ?;",
+                new String[]{orders.getUsername(), orders.getSize(), orders.getType(), String.valueOf(orders.isExpressoShot())});
 
         if (cursor != null)
             cursor.moveToFirst();
 
-        return cursor.getString(0);
+        return cursor.getInt(0);
     }
 
     public Cursor getAllCoffee(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_1 + " = ?", new String[]{username});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME/* + " WHERE " + COL_1 + " = ?"*/, null);
 
         return cursor;
     }
